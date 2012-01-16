@@ -35,12 +35,12 @@ BuildRequires:  libXScrnSaver-devel
 BuildRequires:  openssl-devel
 BuildRequires:  qt-webkit-devel
 
-Requires:       sox
+Requires:       sox%{?_isa}
 Requires:       gnupg
 # Required for SSL/TLS connections
-Requires:       qca-ossl
+Requires:       qca-ossl%{?_isa}
 # Required for GnuPG encryption
-Requires:       qca-gnupg
+Requires:       qca-gnupg%{?_isa}
 
 %description
 Psi+ - Psi IM Mod by psi-dev@conference.jabber.ru
@@ -49,7 +49,7 @@ Psi+ - Psi IM Mod by psi-dev@conference.jabber.ru
 Summary:        Plugins pack for Psi+
 License:        GPLv2+
 Group:          Applications/Internet
-Requires:       %{name} = %{epoch}:%{version}-%{release}
+Requires:       %{name}%{?_isa} = %{epoch}:%{version}-%{release}
 
 
 %description    plugins
@@ -261,9 +261,10 @@ fi
 %{_libdir}/psi-plus/plugins/
 
 %changelog
-* Fri Dec 30 2011 Ivan Romanov <drizt@land.ru> - 0.15-0.23.20111220git5157
+* Mon Jan 16 2012 Ivan Romanov <drizt@land.ru> - 0.15-0.23.20111220git5157
 - native Fedora package
 - corrected comment for Source0
+- added %{?_isa} to requires
 
 * Fri Dec 23 2011 Ivan Romanov <drizt@land.ru> - 0.15-0.22.20111220git5157.R
 - reverted Webkit
