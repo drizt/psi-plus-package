@@ -24,7 +24,7 @@ Source1:        language_ru.tar.bz2
 # I use this script to make tarball with Psi+ sources
 Source2:        generate-tarball.sh
 
-BuildRequires:  qt-devel
+BuildRequires:  qt4-devel
 BuildRequires:  zlib-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  qca2-devel
@@ -33,7 +33,7 @@ BuildRequires:  qconf >= 1.4-2
 BuildRequires:  enchant-devel
 BuildRequires:  libXScrnSaver-devel
 BuildRequires:  openssl-devel
-BuildRequires:  qt-webkit-devel
+BuildRequires:  qt4-webkit-devel
 
 Requires:       sox%{?_isa}
 Requires:       gnupg
@@ -261,11 +261,12 @@ fi
 %{_libdir}/psi-plus/plugins/
 
 %changelog
-* Mon Jan 16 2012 Ivan Romanov <drizt@land.ru> - 1:0.15-0.23.20111220git5157
+* Thu Jan 19 2012 Ivan Romanov <drizt@land.ru> - 1:0.15-0.23.20111220git5157
 - native Fedora package
 - corrected comment for Source0
 - added %{?_isa} to requires
 - less rpmlint warnings
+- clarified qt version in BuildRequires
 
 * Fri Dec 23 2011 Ivan Romanov <drizt@land.ru> - 0.15-0.22.20111220git5157.R
 - reverted Webkit
