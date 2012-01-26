@@ -34,6 +34,7 @@ BuildRequires:  enchant-devel
 BuildRequires:  libXScrnSaver-devel
 BuildRequires:  openssl-devel
 BuildRequires:  qt4-webkit-devel
+BuildRequires:  minizip-devel
 
 Requires:       sox%{?_isa}
 Requires:       gnupg
@@ -267,6 +268,7 @@ fi
 - added %{?_isa} to requires
 - less rpmlint warnings
 - clarified qt version in BuildRequires
+- use system minizip
 
 * Fri Dec 23 2011 Ivan Romanov <drizt@land.ru> - 0.15-0.22.20111220git5157.R
 - reverted Webkit
