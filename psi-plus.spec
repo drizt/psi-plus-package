@@ -161,6 +161,9 @@ Yandex Narod Plugin
 %prep
 %setup -q -n %{name}-%{version}-%{rev}
 
+# Remove bundled library
+rm -fr src/libpsi/tools/zip/minizip
+
 # Untar russian language
 %{__tar} xjf %{SOURCE1} -C .
 
