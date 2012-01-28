@@ -164,6 +164,10 @@ Yandex Narod Plugin
 # Remove bundled library
 rm -fr src/libpsi/tools/zip/minizip
 
+# Psi+ always uses last iris version. So I need to provide bundled
+# iris to guarantee efficiency of program.
+# rm -fr iris
+
 # Untar russian language
 %{__tar} xjf %{SOURCE1} -C .
 
