@@ -161,8 +161,9 @@ Yandex Narod Plugin
 %prep
 %setup -q -n %{name}-%{version}-%{rev}
 
-# Remove bundled library
+# Remove bundled libraries
 rm -fr src/libpsi/tools/zip/minizip
+rm -fr third-party/qca
 
 # Psi+ always uses last iris version. So I need to provide bundled
 # iris to guarantee efficiency of program.
@@ -183,7 +184,8 @@ qconf-qt4
         --no-separate-debug-info   \
         --enable-webkit            \
         --enable-plugins           \
-        --enable-whiteboarding
+        --enable-whiteboarding     \
+        --disable-bundled-qca
 
 make %{?_smp_mflags}
 
@@ -276,6 +278,7 @@ fi
 - less rpmlint warnings
 - clarified qt version in BuildRequires
 - use system minizip
+- explicity removed bundled qca
 
 * Fri Dec 23 2011 Ivan Romanov <drizt@land.ru> - 0.15-0.22.20111220git5157.R
 - reverted Webkit
